@@ -18,8 +18,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Python installieren
         uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+         with ${{ matrix.python-version }}
       - name: Dependencies installieren
         run: python -m pip install -r requirements.txt
       - name: Tests ausführen
