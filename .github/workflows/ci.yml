@@ -11,8 +11,6 @@ jobs:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
         os: [ubuntu-latest, windows-latest]
-        
-        
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
