@@ -1,10 +1,11 @@
 name: CI
 on:
-  env:
-    PYTHON_VERSION: "3.12"
-    APP_ENV: staging
   push:
   pull_request: 
+
+env:
+ PYTHON_VERSION: "3.12"
+ APP_ENV: staging
 
 permissions:
   contents: read
