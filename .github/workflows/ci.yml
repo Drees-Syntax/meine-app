@@ -17,7 +17,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12"]
         os: [ubuntu-latest, windows-latest]
     steps:
       - name: Repository auschecken
@@ -49,3 +48,7 @@ jobs:
          echo "Branch: ${{ github.ref_name }}"
          echo "Event: ${{ github.event_name }}"
          echo "Runner: ${{ runner.os }}"
+
+      - name: Deploy vorbereiten
+        if: github.ref == 'refs/heads/main'
+        run: echo "Deploy wird vorbereitet"
