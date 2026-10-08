@@ -8,3 +8,5 @@ def test_summe_mit_null():
 
 def test_differenz():
     assert differenz(10, 4) == 6
+
+# Kommentar für Pull Request
