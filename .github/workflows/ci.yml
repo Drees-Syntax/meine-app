@@ -45,7 +45,7 @@ jobs:
 
       - name: Lauf-Informationen anzeigen
         run: |
-        echo "Repository: ${{ github.repository }}"
-        echo "Branch: ${{ github.ref_name }}"
-        echo "Event: ${{ github.event_name }}"
-        echo "Runner: ${{ runner.os }}"
+         echo "Repository: ${{ github.repository }}"
+         echo "Branch: ${{ github.ref_name }}"
+         echo "Event: ${{ github.event_name }}"
+         echo "Runner: ${{ runner.os }}"
