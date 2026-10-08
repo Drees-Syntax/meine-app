@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
+
+      - name: python-flake8
+        uses: julianwachholz/flake8-action@v2.0.2
         
       - name: Python installieren
         uses: actions/setup-python@v5
