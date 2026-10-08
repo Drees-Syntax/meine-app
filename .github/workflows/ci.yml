@@ -14,10 +14,10 @@ jobs:
         
         
     steps:
-      - name: Super Duper Linter
-        uses: JustinGrote/Super-Duper-Linter@preview
       - name: Repository auschecken
         uses: actions/checkout@v4
+      - name: Super Duper Linter
+        uses: JustinGrote/Super-Duper-Linter@preview
       - name: Python installieren
         uses: actions/setup-python@v5
         with:
