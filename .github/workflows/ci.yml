@@ -1,5 +1,8 @@
 name: CI
 on:
+  env:
+    PYTHON_VERSION: "3.12"
+    APP_ENV: staging
   push:
   pull_request: 
 
@@ -25,8 +28,11 @@ jobs:
       - name: Python installieren
         uses: actions/setup-python@v5
         with: 
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
+
+      - name: Konfiguration anzeigen
+        run: echo "Python ${{ env.PYTHON_VERSION }} in ${{ env.APP_ENV }}"
           
       - name: Abhängigkeiten installieren
         run: |
