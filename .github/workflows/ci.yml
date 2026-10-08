@@ -42,3 +42,10 @@ jobs:
            
       - name: Tests ausführen
         run: python -m pytest -v
+
+      - name: Lauf-Informationen anzeigen
+        run: |
+        echo "Repository: ${{ github.repository }}"
+        echo "Branch: ${{ github.ref_name }}"
+        echo "Event: ${{ github.event_name }}"
+        echo "Runner: ${{ runner.os }}"
