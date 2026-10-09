@@ -81,3 +81,12 @@ jobs:
     steps:
       - name: Deployment-Platzhalter
         run: echo "Deployment für ${{ github.ref_name }}"
+
+      - name: Build-Artifact herunterladen
+        uses: actions/download-artifact@v4
+        with:
+         name: app-paket
+         path: build/
+
+      - name: Inhalt prüfen
+        run: ls -l build/
