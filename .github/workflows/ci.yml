@@ -18,6 +18,10 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
+
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
@@ -53,6 +57,11 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: echo "Deploy wird vorbereitet"
 
+      - name: Version ermitteln
+        id: version
+        run: echo "version=1.0.${{ github.run_number }}" >>
+         "$GITHUB_OUTPUT"
+
   deploy:
     needs: test
     if: github.ref == 'refs/heads/main'
@@ -60,4 +69,3 @@ jobs:
     steps:
       - name: Deployment-Platzhalter
         run: echo "Deployment für ${{ github.ref_name }}"
-#blabla
