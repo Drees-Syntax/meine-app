@@ -25,7 +25,11 @@ jobs:
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v4
-        
+
+      - uses: ./.github/actions/setup-projekt
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
       - name: Python installieren
         uses: actions/setup-python@v5
         with: 
